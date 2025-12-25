@@ -63,5 +63,8 @@ docker build -t mern-server .
 
 <img width="1919" height="816" alt="Screenshot 2025-12-25 144129" src="https://github.com/user-attachments/assets/1c4a2b4d-d61c-4a0c-8e1a-7e02c7134da9" />
 
+---
+
 <img width="1919" height="862" alt="image" src="https://github.com/user-attachments/assets/2c72bbf8-544d-463a-bdd9-253ff7095867" />
 
+---
