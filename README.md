@@ -4,21 +4,6 @@ A simple **MERN (MongoDB, Express, React, Node.js)** stack application, containe
 
 ---
 
-## Table of Contents
-
-- [Features](#features)  
-- [Prerequisites](#prerequisites)  
-- [Docker Setup](#docker-setup)  
-  - [Create Network](#create-network)  
-  - [Run MongoDB](#run-mongodb)  
-  - [Build and Run Backend](#build-and-run-backend)  
-  - [Build and Run Frontend](#build-and-run-frontend)  
-- [Using Docker Compose](#using-docker-compose)  
-- [Screenshots](#screenshots)  
-- [License](#license)  
-
----
-
 ## Features
 
 - React frontend served via Docker container  
@@ -73,6 +58,8 @@ docker build -t mern-server .
 ## Using Docker Compose
 
 `docker compose up -d`
+
+---
 
 <img width="1919" height="816" alt="Screenshot 2025-12-25 144129" src="https://github.com/user-attachments/assets/1c4a2b4d-d61c-4a0c-8e1a-7e02c7134da9" />
 
