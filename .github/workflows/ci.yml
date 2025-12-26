@@ -1,30 +1,31 @@
-name: Docker Build & Push
+name: Build and Push Docker Images
 
 on:
   push:
     branches:
-      - multi-stage
+      - compose
+  pull_request:
+    branches:
+      - compose
 
 jobs:
- docker:
+  build-and-push:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository code
         uses: actions/checkout@v5
 
-      - name: Docker Login
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Log in to Docker Hub
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_TOKEN }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build & Push Frontend
+      - name: Build and push Docker images with Compose
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/mern-client:latest ./frontend
-          docker push ${{ secrets.DOCKER_USERNAME }}/mern-client:latest
-
-      - name: Build & Push Backend
-        run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/mern-server:latest ./backend
-          docker push ${{ secrets.DOCKER_USERNAME }}/mern-server:latest
+          docker compose -f docker-compose.yml build
+          docker compose -f docker-compose.yml push
