@@ -42,7 +42,7 @@ Open your browser and type `http://localhost`
 
 ### Run the mongodb container
 
-`docker run --network=demo --name mongodb -d -p 27017:27017 -v ~/opt/data:/data/db mongo:latest`
+`docker run --network=test --name mongodb -d -p 27017:27017 -v ~/opt/data:/data/db mongo:latest`
 
 ### Build the server
 
